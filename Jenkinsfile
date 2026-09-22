@@ -29,9 +29,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat '"C:/Users/Universal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" stop calculator-container || echo No old container'
-                bat '"C:/Users/Universal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" rm calculator-container || echo No old container'
-                bat '"C:/Users/Universal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" run -d -p 8080:8080 --name calculator-container calculator-app'
+                bat '''
+                "C:/Users/Universal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" rm -f calculator-container
+                "C:/Users/Universal/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" run -d -p 8080:8080 --name calculator-container calculator-app
+                '''
             }
         }
     }
