@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean package -DskipTests'
+                bat 'call "C:/Users/Universal/Downloads/apache-maven-3.9.16-bin/apache-maven-3.9.16/bin/mvn.cmd" clean package -DskipTests'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'call "C:/Users/Universal/Downloads/apache-maven-3.9.16-bin/apache-maven-3.9.16/bin/mvn.cmd" test'
             }
         }
 
