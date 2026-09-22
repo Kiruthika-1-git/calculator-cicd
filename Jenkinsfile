@@ -11,14 +11,12 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean package -DskipTests'
-            }
+bat 'call mvnw.cmd clean package -DskipTests'            }
         }
 
         stage('Test') {
             steps {
-                bat 'mvnw.cmd test'
-            }
+bat 'call mvnw.cmd test'            }
         }
 
         stage('Docker Build') {
