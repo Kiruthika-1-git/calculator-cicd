@@ -11,12 +11,12 @@ pipeline {
 
         stage('Build') {
             steps {
-bat 'call mvnw.cmd clean package -DskipTests'            }
+bat '"C:\Users\Universal\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd" clean package -DskipTests'            }
         }
 
         stage('Test') {
             steps {
-bat 'call mvnw.cmd test'            }
+bat '"C:\Users\Universal\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd" test'         }
         }
 
         stage('Docker Build') {
